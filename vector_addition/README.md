@@ -13,8 +13,6 @@ This project implements a simple but complete example of writing, compiling, and
   - Input validation macros
   - PyBind11 bindings for Python integration
 
-- **`addition2.cu`** - Alternative/extended CUDA implementation
-
 - **`main.py`** - Python wrapper script for loading and testing the CUDA extension
   - JIT compilation using `torch.utils.cpp_extension.load()`
   - Basic functionality test with random vectors
