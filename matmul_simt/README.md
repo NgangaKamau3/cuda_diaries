@@ -2,23 +2,6 @@
 
 A comprehensive exploration of matrix multiplication (GEMM) implementations using CUDA and OpenAI Triton, showcasing progressive optimization techniques from naive implementations to highly optimized kernels that approach cuBLAS performance.
 
-## Performance Summary
-
-For M = N = K = 4096, compiled with `-O3 --use_fast_math`
-
-| Kernel name                                            | Duration (ms) | % of cuBLAS | GFLOPS    |
-|--------------------------------------------------------|---------------|-------------|-----------|
-| cuBLAS (PyTorch)                                       | ~4.8          | 100.00%     | ~28,672   |
-| **v6b** (transpose A in shared memory)                | TBD           | ~90%        | ~25,800   |
-| **v6a** (vectorized global memory access)             | TBD           | ~85%        | ~24,400   |
-| **v5** (2D warp-tiling with register cache)           | TBD           | ~55%        | ~15,770   |
-| **v4** (2D thread-tiling with register cache)         | TBD           | ~54%        | ~15,480   |
-| **v3** (thread coarsening)                            | TBD           | ~12%        | ~3,440    |
-| **v2** (2D block-tiling with shared memory)           | TBD           | ~10%        | ~2,870    |
-| **v1** (naive 1 row × 1 column)                       | TBD           | ~8%         | ~2,295    |
-| Triton (auto-tuned)                                   | TBD           | ~95%        | ~27,240   |
-
-**Note**: Benchmarks vary by GPU architecture. Results above are representative of modern NVIDIA GPUs.
 
 ## Optimization Techniques & Lessons Learned
 
